@@ -22,7 +22,7 @@ curl.headers['User-Agent']      = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/5
   curl.perform
   result = JSON.parse(curl.body_str).to_s.gsub('\n', "\n").gsub('\t', "")
 
-  File.open("#{page}.json", 'w') { |file| file.write(result) }
+  File.open("a/#{page}.json", 'w') { |file| file.write(result) }
 
   puts "#{page} done"
 end
